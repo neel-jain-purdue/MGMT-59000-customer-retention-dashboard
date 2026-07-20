@@ -25,29 +25,6 @@ streamlit run app.py
 
 The app will open at `http://localhost:8501`.
 
-## Deploy to GitHub + Streamlit Community Cloud
-
-1. **Create a GitHub repository** and push these three files (keep them in the repo root, or update the `DATA_PATH` in `app.py` if you nest them in a subfolder):
-
-   ```bash
-   git init
-   git add app.py requirements.txt NR_dataset.xlsx README.md
-   git commit -m "Initial dashboard commit"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo>.git
-   git push -u origin main
-   ```
-
-2. **Deploy on Streamlit Community Cloud**:
-   - Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
-   - Click **"New app"**.
-   - Select your repository, branch (`main`), and set the main file path to `app.py`.
-   - Click **"Deploy"**.
-
-   Streamlit Cloud will install `requirements.txt` automatically and launch the app. Because `NR_dataset.xlsx` is committed to the repo, no extra data upload step is needed.
-
-3. **Updates**: any future `git push` to the connected branch will automatically redeploy the app.
-
 ## Notes
 
 - The dashboard is fully filter-driven (sidebar: date range, region, channel, category, segment label) — every KPI, chart, and recommendation on every tab recalculates from the current selection.
